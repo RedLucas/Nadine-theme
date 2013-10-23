@@ -10,7 +10,7 @@ Here, we import all the styles the standard stylesheet gets, only
 without the media queries. No need to worry about editing anything!
 
 ******************************************************************/
-
+@import "bourbon";
 /*
 Remember, all the BASE styles are called already since IE can
 read those. Below, we need to import only the stuff IE can't 

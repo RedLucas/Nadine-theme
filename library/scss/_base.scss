@@ -68,7 +68,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	
 	margin: 0 auto;
 }
 
@@ -158,7 +158,7 @@ HEADER STYLES
 			text-align: center;
 			font-weight: 300;
 			a {
-				color: $light_blue;
+				color: $light_blue !important;
 				&:visited {
 					color: $light_blue;
 				}
@@ -190,10 +190,11 @@ and more scalable.
 .nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
-	height: 100px;
-	line-height: 100px;
+	margin: 0;
+	@include clearfix;
 	ul {
-		margin: 0;
+		
+		@include clearfix;
 	}
 	li {
 		line-height: 100px;
@@ -205,8 +206,9 @@ and more scalable.
 			
 			//background-color: #eee;
 			border-bottom: 1px solid #ccc;
-			
-			font-size: 1.2em;
+			padding: 15px;
+            font-weight: 200;
+			font-size: 1.6em;
 			/*
 			remember this is for mobile ONLY, so there's no need
 			to even declare hover styles here, you can do it in
