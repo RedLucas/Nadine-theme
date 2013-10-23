@@ -1,0 +1,40 @@
+$dark_brown: #4F433B;
+
+$orange: #ED8C25;
+
+$light_blue: #B0C6C9;
+
+$black_blue: #2B2A33;
+
+$dark_blue: #32738A;
+
+$light_brown: #B5A58E;
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #000;
+$white:             #fff;
+
+$bones-pink:        $dark_blue;
+$bones-blue:        #1990db;
+
+$nav_link_color: $orange;
+
+$link-color:        $dark_blue;
+$link-hover:        darken($link-color, 9%);
+
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+
