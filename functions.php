@@ -38,7 +38,7 @@ require_once( 'library/video-post-type.php' ); // you can disable this if you li
 	- adding custom login css
 	- changing text in footer of admin
 */
-// require_once( 'library/admin.php' ); // this comes turned off by default
+require_once( 'library/admin.php' ); // this comes turned off by default
 /*
 4. library/translation/translation.php
 	- adding support for other languages
@@ -163,4 +163,13 @@ function bones_wpsearch($form) {
 } // don't remove this bracket!
 
 
+?>
+<?php
+function my_theme_add_editor_styles() {
+    global $post;
+    $post_type = get_post_type( $post->ID );
+    $editor_style = 'editor-style-' . $post_type . '.css';
+    add_editor_style( "/css/" . $editor_style );
+}
+add_action( 'pre_get_posts', 'my_theme_add_editor_styles' );
 ?>
