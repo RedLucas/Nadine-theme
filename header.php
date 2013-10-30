@@ -30,7 +30,10 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php // wordpress head functions ?>
+		<?php // wordpress head functions 
+		gravity_form_enqueue_scripts(1, true);
+		gravity_form_enqueue_scripts(2, true);
+		?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
@@ -39,8 +42,6 @@
 		
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
-		
-		
 
 	</head>
 
@@ -52,6 +53,9 @@
 
 				<div id="inner-header" class="wrap clearfix">
 					<nav role="navigation">
+						<div id="mobile_nav" class="mobile_nav">
+							<a href="#" id="mobile_nav_icon" class="mobile_nav_icon"><i class="icon icon-reorder"></i></a>
+						</div>
 						<?php bones_main_nav(); ?>
 					</nav>
 					<div id="logo">

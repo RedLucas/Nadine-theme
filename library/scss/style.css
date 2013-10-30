@@ -2145,6 +2145,11 @@ POSTS & CONTENT STYLES
       width: 100%;
       height: auto; }
 
+.page-id-4 .map {
+  margin-top: 20px; }
+  .page-id-4 .map .lmm-panel-text {
+    background-color: #32738a; }
+
 #main {
   float: none;
   margin: auto;

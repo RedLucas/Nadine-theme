@@ -412,7 +412,6 @@ NAVIGATION STYLES
 .nav {
   background: #2b2a33;
   border: 0;
-  display: block;
   /* end .menu ul li */
   /* highlight current page */
   /* end current highlighters */ }
@@ -428,9 +427,6 @@ NAVIGATION STYLES
     float: left;
     position: relative;
     margin: 0 calc(10% - 53px);
-    line-height: 100px;
-    list-style: none;
-    text-align: center;
     /*
     plan your menus and drop-downs wisely.
     */
@@ -438,10 +434,6 @@ NAVIGATION STYLES
     .nav li a {
       border-bottom: 0;
       color: #ed8c25;
-      display: block;
-      text-decoration: none;
-      font-weight: 200;
-      font-size: 1.6em;
       /*
       you can use hover styles here even though this size
       has the possibility of being a mobile device.
@@ -479,10 +471,6 @@ NAVIGATION STYLES
     .nav li:hover ul {
       top: auto;
       display: block; }
-  .nav li.current-menu-item,
-  .nav li.current_page_item,
-  .nav li.current-page-ancestor {
-    display: list-item; }
 
 /* end .nav */
 /*********************

@@ -20,6 +20,7 @@ GENERAL STYLES
 body {
 
 }
+// Front Page Body Class 
 .page-id-15{
 	#content{
 		margin: 0;
@@ -27,13 +28,16 @@ body {
 
 			img {
 				width: 100%;
+				height: auto;
 				
 			}
 		}
 	}
 }
-
-
+// Interviews Page Body Class
+.page-id-12 {
+	
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -58,10 +62,13 @@ HEADER STYLES
 /*********************
 NAVIGATION STYLES
 *********************/
-
+.mobile_nav{
+	display: none;
+}
 .nav {
 	background: $black_blue;
 	border: 0;
+	display: block;
 	ul {
 		@include clearfix;
 		margin: 0;
@@ -70,10 +77,19 @@ NAVIGATION STYLES
 		float: left;
 		position: relative;
 		margin: 0 calc(10% - 53px);
+		line-height: 100px;
+		list-style: none;
+		text-align: center;
 
 		a {
 			border-bottom: 0;
 			color: $orange;
+			display: block;
+			text-decoration: none;
+			
+			//background-color: #eee;
+            font-weight: 200;
+			font-size: 1.6em;
 			
 			/*
 			you can use hover styles here even though this size
@@ -139,6 +155,7 @@ NAVIGATION STYLES
 			li.current-menu-item,
 			li.current_page_item,
 			li.current-page-ancestor {
+				
 				a {}
 			}
 		}
@@ -155,6 +172,7 @@ NAVIGATION STYLES
 	li.current-menu-item,
 	li.current_page_item,
 	li.current-page-ancestor {
+		display: list-item;
 		a {}
 	}  /* end current highlighters */
 

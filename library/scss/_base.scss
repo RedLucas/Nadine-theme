@@ -172,6 +172,7 @@ HEADER STYLES
 			text-align: center;
 			color: $orange;
 			font-weight: 300;
+			margin-bottom: 0;
 		}
 	}
 }
@@ -186,28 +187,41 @@ easily write one group of styles for
 the navs on the site so our css is cleaner
 and more scalable.
 */
-
+.mobile_nav {
+	height: 50px;
+	.mobile_nav_icon {
+		height: 50px;
+		display: block;
+		padding: 10px;
+		
+		i {
+			font-size: 2em;
+		}
+	}
+}
 .nav {
 	border: 1px solid #ccc;
 	border-bottom: 0;
 	margin: 0;
 	@include clearfix;
+	padding: 0;
+	display: none;
 	ul {
 		
 		@include clearfix;
 	}
 	li {
-		line-height: 100px;
+		line-height: 50px;
 		list-style: none;
 		text-align: center;
+		padding: 0 15px;
 		a {
 			display: block;
 			text-decoration: none;
 			
 			//background-color: #eee;
 			border-bottom: 1px solid #ccc;
-			padding: 15px;
-            font-weight: 200;
+            font-weight: 500;
 			font-size: 1.6em;
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -260,8 +274,10 @@ and more scalable.
 	li.current-menu-item,
 	li.current_page_item,
 	li.current-page-ancestor {
-
-		a {}
+			display: none;
+		a {
+			text-decoration: underline;
+		}
 
 	}  /* end current highlighters */
 
@@ -272,10 +288,64 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 
+// Front Page Body Class 
+.page-id-15{
+	#content{
+		margin: 0;
+		.front-page {
+			overflow: hidden;
+			img {
+				width: 100%;
+				height: auto;
+				
+			}
+		}
+	}
+}
+.page-id-4 {
+	.map {
+		margin-top: 20px;
+		.lmm-panel-text {
+			background-color: $dark_blue;
+		}
+	}
+}
+#main {
+	float: none;
+	margin: auto;
+	padding: 15px;
+	
+}
+strong {
+	color: $dark_blue;
+}
+em {
+	color: $dark_blue;
+}
 #content {
-	margin-top: 2.2em;
+	
 }
 
+article {
+	margin: 25px 0;
+	.video{
+		float: left;
+		padding: 15px;
+	}
+	
+	&:nth-of-type(2n){
+		.video{
+			float: right;
+		}
+		
+	}
+	&:nth-of-type(2n+1){
+		.video {
+			float: left;
+		}
+		
+	}
+}
 		.hentry {
 
 			header {}
@@ -289,7 +359,9 @@ POSTS & CONTENT STYLES
 
 		.single-title {}
 
-		.page-title {}
+		.page-title {
+			color: $dark_brown;
+		}
 
 		.archive-title { }
 

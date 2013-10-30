@@ -11,14 +11,14 @@ of the styles inside media queries.
 ******************************************************************/
 //@import "compass/reset";
 
-@import "bourbon";
+@import "bourbon"; 
 //
 // IMPORTING STYLES
 //
 
 // import fonts
 
-
+@import "font-awesome/font-awesome.scss";
 // import colours
 * {
 	@include box-sizing(border-box);

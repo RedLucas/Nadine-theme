@@ -13,12 +13,12 @@
 				<div id="inner-content" class="wrap clearfix">
 
 						<main id="main" class="eightcol first clearfix" role="main">
-
+						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article id="page-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article">
-
+							
 								<header class="article-header">
 
-									<h1 class="page-title"><?php the_title(); ?></h
+									<h1 class="page-title"><?php the_title(); ?></h1>
 
 
 								</header> <?php // end article header ?>
@@ -32,7 +32,7 @@
 								</footer> <?php // end article footer ?>
 
 							</article> <?php // end article ?>
-
+							<?php endwhile; endif; ?>
 
 						</main> <?php // end #main ?>
 
