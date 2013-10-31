@@ -140,7 +140,7 @@ function bones_scripts_and_styles() {
     }
 
     //adding scripts file in the footer
-    wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+    wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts-ck.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
     wp_enqueue_script( 'bones-modernizr' );
@@ -154,9 +154,11 @@ function bones_scripts_and_styles() {
     using the google cdn. That way it stays cached
     and your site will load faster.
     */
+    wp_deregister_script('jquery');
+	wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
     wp_enqueue_script( 'jquery' );
+    
     wp_enqueue_script( 'bones-js' );
-    wp_enqueue_script( "mobile-Nav", get_template_directory_uri() . "/library/js/mobile_nav-ck.js", array("jquery"), "0.9", true);
 
   }
 }

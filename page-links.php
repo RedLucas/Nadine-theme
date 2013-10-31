@@ -9,7 +9,7 @@
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<main id="main" class="twelvecol first clearfix" role="main">
+						<main id="main" class="eightcol first clearfix" role="main">
 								<?php $query = new WP_Query( 'post_type=link' ); ?>
 							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
