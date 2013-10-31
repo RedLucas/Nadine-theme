@@ -63,3 +63,5 @@ codekit-config.json
 *.css
 
 library/css/style.css
+
+codekit-config.json
