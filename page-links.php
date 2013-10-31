@@ -1,7 +1,6 @@
 <?php
-/*
-Template Name: Interviews Page
-*/
+
+
 ?>
 
 <?php get_header(); ?>
@@ -11,23 +10,22 @@ Template Name: Interviews Page
 				<div id="inner-content" class="wrap clearfix">
 
 						<main id="main" class="twelvecol first clearfix" role="main">
-								<?php $query = new WP_Query( 'post_type=interview_video' ); ?>
+								<?php $query = new WP_Query( 'post_type=link' ); ?>
 							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-								<div class="video">
-								<?php  if ( get_post_meta( get_the_ID(), 'wpcf-interview-video', true ) ) : ?>
-   									 <?php 
-   									 $embedded_video_url = get_post_meta( get_the_ID(), 'wpcf-interview-video', true );
-   									
-   									 $embedded_video = wp_oembed_get($embedded_video_url);
-   									 print $embedded_video;
-?>
-								<?php endif;?>
-								</div>
 								<header class="article-header">
-
-									<h1 class="page-title"><?php the_title(); ?></h1>
+									
+									<h1 class="page-title">
+										
+										<?php  if ( get_post_meta( get_the_ID(), 'wpcf-link', true ) ) : ?>
+   									 <?php 
+   									 $link = get_post_meta( get_the_ID(), 'wpcf-link', true ); 									?>
+   									 <a href="<?php echo $link ?>"><?php the_title(); ?></a>
+   									 <?php endif;?>
+										
+										
+									</h1>
 
 
 

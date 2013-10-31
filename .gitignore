@@ -56,6 +56,16 @@ temp/
 
 *.scssc
 
+<<<<<<< HEAD
 codekit-config.json
 
 codekit-config.json
+=======
+*.css
+
+codekit-config.json
+
+*.css
+
+library/css/style.css
+>>>>>>> 8fbc61f98365a66adeb73b010f7cbf36ffe25fc4

@@ -35,7 +35,7 @@ function bones_ahoy() {
     // enqueue base scripts and styles
     add_action( 'wp_enqueue_scripts', 'bones_scripts_and_styles', 999 );
     // ie conditional wrapper
-
+	
     // launching this stuff after theme setup
     bones_theme_support();
 
@@ -156,6 +156,7 @@ function bones_scripts_and_styles() {
     */
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'bones-js' );
+    wp_enqueue_script( "mobile-Nav", get_template_directory_uri() . "/library/js/mobile_nav-ck.js", array("jquery"), "0.9", true);
 
   }
 }

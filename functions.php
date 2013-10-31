@@ -162,6 +162,9 @@ function bones_wpsearch($form) {
 	return $form;
 } // don't remove this bracket!
 
+/************* Custom Field Types ******************/
+
+
 
 ?>
 <?php
