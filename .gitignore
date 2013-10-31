@@ -55,3 +55,11 @@ temp/
 .svn
 
 *.scssc
+
+*.css
+
+codekit-config.json
+
+*.css
+
+library/css/style.css
