@@ -189,11 +189,15 @@ and more scalable.
 */
 .mobile_nav {
 	height: 50px;
+	background-color: $black_blue;
 	.mobile_nav_icon {
 		height: 50px;
 		display: block;
 		padding: 10px;
-		
+		color: $orange;
+		&:hover, &:focus {
+				color: $orange;
+			}
 		i {
 			font-size: 2em;
 		}
@@ -201,7 +205,7 @@ and more scalable.
 }
 .nav {
 	border: 1px solid #ccc;
-	border-bottom: 0;
+	
 	margin: 0;
 	@include clearfix;
 	padding: 0;
@@ -215,10 +219,12 @@ and more scalable.
 		list-style: none;
 		text-align: center;
 		padding: 0 15px;
+		background: $black_blue;
 		a {
 			display: block;
 			text-decoration: none;
 			
+			color: $orange;
 			//background-color: #eee;
 			border-bottom: 1px solid #ccc;
             font-weight: 500;
@@ -230,13 +236,16 @@ and more scalable.
 			keep this file as small as possible!
 			*/
 			&:hover, &:focus {
-
+				color: $link-hover;
 			}
 		}
 
 		&:first-child {}
 
-		&:last-child {}
+		&:last-child {
+			a { border: 0px solid black;
+			}
+		}
 
 		/*
 		so you really have to rethink your dropdowns for mobile.
@@ -307,6 +316,13 @@ POSTS & CONTENT STYLES
 		margin-top: 20px;
 		.lmm-panel-text {
 			background-color: $dark_blue;
+		}
+	}
+}
+.page-id-17 {
+	ul {
+		li {
+			list-style: none;
 		}
 	}
 }

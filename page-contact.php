@@ -5,11 +5,11 @@
 
 <?php get_header(); ?>
 
-			<div id="content">
+			<main id="content">
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<main id="main" class="twelvecol first clearfix" role="main">
+						<div id="main" class="eightcol first clearfix" role="main">
 							
 								<header class="article-header">
 									

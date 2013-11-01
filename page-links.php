@@ -5,40 +5,58 @@
 
 <?php get_header(); ?>
 
-			<div id="content">
+			<main id="content">
 
 				<div id="inner-content" class="wrap clearfix">
 
-						<main id="main" class="eightcol first clearfix" role="main">
-								<?php $query = new WP_Query( 'post_type=link' ); ?>
-							<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-
-							<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-								<header class="article-header">
+						<div id="main" class="eightcol first clearfix" role="main">
+								<header>
+									<h1 class="page-title"> <?php the_title() ?></h1>
+								</header>
+								<?php $pastCat = "";
+								 $query = new WP_Query( 'post_type=link' ); ?>
+								<?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+								<?php 
 									
-									<h1 class="page-title">
+									$currentCats = get_the_category();
+									
+									foreach($currentCats as $currentCat){
+									  
+									if ($currentCat->slug !== $pastCat){
+									echo "<section><h2>". $currentCat->cat_name . "</h2>";
+									$queryArgs = array(
+										"post_type" => "link",
+										"tax_query" => array(
+											array(
+												"taxonomy" => $currentCat->taxonomy,
+												"field"    => "slug",
+												"terms"	   => $currentCat->slug
+											)
+										)
+									);
+								 ?>
+								 <ul>
+								<?php $queryCat = new WP_Query( $queryArgs );  ?>
+							<?php if ($queryCat->have_posts()) :  while ($queryCat->have_posts()) : $queryCat->the_post(); ?>
+
+							
+									
+									
 										
 										<?php  if ( get_post_meta( get_the_ID(), 'wpcf-link', true ) ) : ?>
    									 <?php 
    									 $link = get_post_meta( get_the_ID(), 'wpcf-link', true ); 									?>
-   									 <a href="<?php echo $link ?>"><?php the_title(); ?></a>
+   									<li> <a target="_blank" href="<?php echo $link ?>"><?php the_title(); ?></a></li>
    									 <?php endif;?>
 										
 										
-									</h1>
-
-
-
-								</header> <?php // end article header ?>
-								
-								<section class="entry-content clearfix" itemprop="articleBody">
+						
 									<?php the_content();  ?>
 									
-								</section> <?php // end article section ?>
+								
 
-
-							</article> <?php // end article ?>
-
+							<?php endwhile; endif;$pastCat = $currentCat->slug; }}  ?>
+								 </ul></section>
 							<?php endwhile; endif; ?>
 								
 						</main> <?php // end #main ?>

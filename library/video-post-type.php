@@ -101,7 +101,7 @@ function add_link_post_type() {
 	 	) /* end of options */
 	); /* end of register post type */
 	
-	
+	register_taxonomy_for_object_type( 'category', 'link' );
 } 
 
 	// adding the function to the Wordpress init
